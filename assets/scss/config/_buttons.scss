@@ -1,0 +1,57 @@
+.btn {
+    display: inline-flex;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 40px;
+    color: $color-black;
+    border-style: solid;
+    border-width: 1px;
+    @include transition;
+
+    &.primary {
+        background: $color-red;
+        color: $color-text-lightgrey;
+        border-color: $color-red;
+
+        &:hover {
+            background-color: $color-text-lightgrey;
+            color: $color-red;
+        }
+    }
+
+    &.secondary {
+        border: 1px solid $color-black;
+
+        &:hover {
+            background: $color-red;
+            border-color: $color-red;
+            color: $color-white;
+        }
+    }
+
+    &.filled-white {
+        background-color: $color-white;
+    }
+}
+
+.btn-play {
+    max-width: 100px;
+    max-height: 100px;
+    width: 6.944vw;
+    height: 6.944vw;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 50%;
+    background: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50" fill="white"/><path d="M40 35.8171C40 34.2038 41.812 33.2544 43.1384 34.1728L63.6248 48.3556C64.7736 49.1509 64.7736 50.8491 63.6248 51.6444L43.1384 65.8273C41.812 66.7456 40 65.7962 40 64.1829V35.8171Z" fill="%23CFA55B"/></svg>');
+    background-size: cover;
+    background-position: center;
+    @include cursor;
+    @include transition;
+
+    @include hover {
+        background-image: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50" fill="%23CFA55B"/><path d="M40 35.8171C40 34.2038 41.812 33.2544 43.1384 34.1728L63.6248 48.3556C64.7736 49.1509 64.7736 50.8491 63.6248 51.6444L43.1384 65.8273C41.812 66.7456 40 65.7962 40 64.1829V35.8171Z" fill="white"/></svg>');
+        transform: translate(-50%, -50%) scale(0.9) !important;
+    }
+}
