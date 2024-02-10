@@ -43,3 +43,10 @@ section {
     position: relative;
 }
 
+.entry-content{
+    padding-top: 77px;
+
+    @include mobile-tablet{
+        padding-top: 56px;
+    }
+}

@@ -1,0 +1,32 @@
+[type="text"],
+[type="email"],
+[type="date"],
+textarea {
+    padding: 15px 5px;
+    border: 1px solid $color-text-lightgrey;
+    border-radius: 10px;
+    outline: none;
+    margin-top: 5px;
+    width: 100%;
+    @include transition;
+
+    &:focus {
+        border-color: $color-red;
+    }
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    gap: 15px;
+    max-width: 400px;
+
+    p {
+        width: 100%;
+        display: block;
+    }
+}
+
+label {
+    font-size: 14px;
+}

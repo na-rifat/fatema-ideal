@@ -1,0 +1,62 @@
+.contact-form {
+    padding-top: 100px;
+
+    @include mobile-tablet{
+        padding: 50px 0;
+    }
+
+    .wrapper {
+        display: flex;
+        gap: 5vw;
+
+        @include mobile {
+            flex-flow: column;
+        }
+
+        .left {
+            width: 50%;
+
+            @include mobile{
+                width: 100%;
+            }
+        }
+        
+        .right {
+            width: 50%;
+            
+            @include mobile{
+                width: 100%;
+            }
+        }
+    }
+    
+    .map-wrapper {
+        iframe {
+            width: 100%;
+            display: flex;
+        }
+    }
+
+    .contacts {
+        margin-top: 40px;
+
+        display: flex;
+        flex-flow: column;
+        gap: 10px;
+
+        a {
+            color: $color-text-grey;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            i {
+                color: $color-red;
+                width: 16px;
+                height: 16px;
+                min-width: 16px;
+                min-height: 16px;
+            }
+        }
+    }
+}

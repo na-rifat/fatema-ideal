@@ -8,6 +8,8 @@
         max-width: 900px;
         @include margin-center;
 
+        @include mobile-grid(2, 20);
+
         .ucp {
             display: flex;
             flex-flow: column;
@@ -16,8 +18,14 @@
             justify-content: center;
             position: relative;
 
-            h3{
+            h3 {
                 font-weight: 400;
+                text-align: center;
+
+                @include mobile {
+                    font-size: 16px;
+                    line-height: 26px;
+                }
             }
 
             &:not(:last-child) {
@@ -29,6 +37,10 @@
                     display: flex;
                     position: absolute;
                     right: -3.5vw;
+
+                    @include mobile {
+                        display: none;
+                    }
                 }
             }
         }
@@ -39,6 +51,13 @@
                 height: 60px;
                 max-width: 60px;
                 max-height: 60px;
+
+                @include mobile {
+                    width: 40px;
+                    height: 40px;
+                    max-width: 40px;
+                    max-height: 40px;
+                }
             }
         }
     }

@@ -7302,12 +7302,6 @@ main {
   .right-aligned-container {
     width: 1320px; } }
 
-@media (min-width: 1800px) {
-  .container {
-    width: 1700px; }
-  .right-aligned-container {
-    width: 1700px; } }
-
 /* Maintain the same padding for both containers */
 .container {
   padding-right: 15px; }
@@ -7405,10 +7399,10 @@ main {
   transition: 0.3s all ease; }
   .btn.primary {
     background: #d90d32;
-    color: #cccccc;
+    color: #ffffff;
     border-color: #d90d32; }
     .btn.primary:hover {
-      background-color: #cccccc;
+      background-color: #ffffff;
       color: #d90d32; }
   .btn.secondary {
     border: 1px solid #000000; }
@@ -7499,10 +7493,10 @@ h4 {
   color: #333333;
   /* H4 */
   font-family: "DM Sans", sans-serif;
-  font-size: 32px;
+  font-size: 18px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 42px;
+  font-weight: 600;
+  line-height: 28px;
   /* 131.25% */ }
   h4.bold {
     font-weight: 600; }
@@ -7553,6 +7547,35 @@ caption {
   letter-spacing: 2.4px;
   border-radius: 50px;
   border: 1px solid #eaeaea; }
+
+[type="text"],
+[type="email"],
+[type="date"],
+textarea {
+  padding: 15px 5px;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  outline: none;
+  margin-top: 5px;
+  width: 100%;
+  transition: 0.3s all ease; }
+  [type="text"]:focus,
+  [type="email"]:focus,
+  [type="date"]:focus,
+  textarea:focus {
+    border-color: #d90d32; }
+
+form {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+  max-width: 400px; }
+  form p {
+    width: 100%;
+    display: block; }
+
+label {
+  font-size: 14px; }
 
 [data-aos][data-aos][data-aos-duration="50"],
 body[data-aos-duration="50"] [data-aos] {
@@ -9058,7 +9081,13 @@ footer {
       /* 150% */ }
 
 .hero-banner {
-  height: 100vh; }
+  height: calc(100vh - 77px); }
+  @media only screen and (max-width: 767px) {
+    .hero-banner {
+      height: calc(100vh - 56px); } }
+  @media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .hero-banner {
+      height: calc(100vh - 56px); } }
   .hero-banner .swiper {
     height: 100%; }
   .hero-banner .swiper-slide {
@@ -9071,13 +9100,19 @@ footer {
       animation-name: play_bg_img;
       animation-duration: 10s;
       animation-iteration-count: infinite; }
+      @media only screen and (max-width: 767px) {
+        .hero-banner .swiper-slide.swiper-slide-active {
+          animation-name: play_bg_img_mobile; } }
     .hero-banner .swiper-slide .wrapper {
       max-width: 40%;
       position: relative;
       z-index: 1; }
       @media only screen and (min-width: 768px) and (max-width: 1200px) {
         .hero-banner .swiper-slide .wrapper {
-          width: 100%; } }
+          max-width: 70%; } }
+      @media only screen and (max-width: 767px) {
+        .hero-banner .swiper-slide .wrapper {
+          max-width: 90%; } }
 
 @keyframes play_bg_img {
   0% {
@@ -9086,6 +9121,14 @@ footer {
     background-size: 110%; }
   100% {
     background-size: 100%; } }
+
+@keyframes play_bg_img_mobile {
+  0% {
+    background-size: auto 100%; }
+  60% {
+    background-size: auto 110%; }
+  100% {
+    background-size: auto 100%; } }
   .hero-banner .overlay {
     position: absolute;
     top: 0;
@@ -9128,6 +9171,11 @@ footer {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto; }
+    @media only screen and (max-width: 767px) {
+      .ucps .wrapper {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr); } }
     .ucps .wrapper .ucp {
       display: flex;
       flex-flow: column;
@@ -9136,7 +9184,12 @@ footer {
       justify-content: center;
       position: relative; }
       .ucps .wrapper .ucp h3 {
-        font-weight: 400; }
+        font-weight: 400;
+        text-align: center; }
+        @media only screen and (max-width: 767px) {
+          .ucps .wrapper .ucp h3 {
+            font-size: 16px;
+            line-height: 26px; } }
       .ucps .wrapper .ucp:not(:last-child)::after {
         content: "";
         height: 100%;
@@ -9145,19 +9198,40 @@ footer {
         display: flex;
         position: absolute;
         right: -3.5vw; }
+        @media only screen and (max-width: 767px) {
+          .ucps .wrapper .ucp:not(:last-child)::after {
+            display: none; } }
     .ucps .wrapper .icon-wrapper img {
       width: 60px;
       height: 60px;
       max-width: 60px;
       max-height: 60px; }
+      @media only screen and (max-width: 767px) {
+        .ucps .wrapper .icon-wrapper img {
+          width: 40px;
+          height: 40px;
+          max-width: 40px;
+          max-height: 40px; } }
 
 .fifty-fifty {
   padding: 100px 0; }
+  @media only screen and (max-width: 767px) {
+    .fifty-fifty {
+      padding: 50px 0; } }
+  @media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .fifty-fifty {
+      padding: 50px 0; } }
   .fifty-fifty .wrapper {
     display: flex;
     gap: 5vw; }
+    @media only screen and (max-width: 767px) {
+      .fifty-fifty .wrapper {
+        flex-flow: column; } }
     .fifty-fifty .wrapper.reverse {
       flex-flow: row-reverse; }
+      @media only screen and (max-width: 767px) {
+        .fifty-fifty .wrapper.reverse {
+          flex-flow: column-reverse; } }
     .fifty-fifty .wrapper .left {
       width: 50%; }
       .fifty-fifty .wrapper .left .img-wrapper {
@@ -9168,14 +9242,26 @@ footer {
           max-height: 500px;
           object-fit: cover;
           object-position: center; }
+      @media only screen and (max-width: 767px) {
+        .fifty-fifty .wrapper .left {
+          width: 100%; } }
     .fifty-fifty .wrapper .right {
       width: 50%; }
       .fifty-fifty .wrapper .right .subtitle {
         font-weight: 600; }
+      @media only screen and (max-width: 767px) {
+        .fifty-fifty .wrapper .right {
+          width: 100%; } }
 
 .upcoming-events {
   padding: 100px 0;
   background-color: #f5f5f5; }
+  @media only screen and (max-width: 767px) {
+    .upcoming-events {
+      padding: 50px 0; } }
+  @media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .upcoming-events {
+      padding: 50px 0; } }
   .upcoming-events .heading {
     text-align: center;
     max-width: 720px;
@@ -9201,6 +9287,10 @@ footer {
         gap: 5px;
         font-size: 13px;
         line-height: 23px; }
+      @media only screen and (max-width: 767px) {
+        .upcoming-events .event .meta {
+          gap: 5px;
+          flex-wrap: wrap; } }
   .upcoming-events .description {
     color: #333333; }
   .upcoming-events .tool {
@@ -9248,8 +9338,233 @@ footer {
           opacity: 0.2;
           transform: scale(0.9); }
 
-.facilties {
+.facilities {
+  padding: 100px 0;
+  background-color: #f5f5f5; }
+  @media only screen and (max-width: 767px) {
+    .facilities {
+      padding: 50px 0; } }
+  @media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .facilities {
+      padding: 50px 0; } }
+  .facilities .heading {
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+  .facilities .facilities-wrapper {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); }
+    @media only screen and (min-width: 768px) and (max-width: 1200px) {
+      .facilities .facilities-wrapper {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr); } }
+    @media only screen and (max-width: 767px) {
+      .facilities .facilities-wrapper {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(1, 1fr); } }
+  .facilities .facility {
+    border: 1px solid #ccc; }
+    .facilities .facility .img-wrapper {
+      width: 100%;
+      height: 290px;
+      overflow: hidden; }
+      .facilities .facility .img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.3s all ease; }
+    .facilities .facility:hover .img-wrapper img {
+      transform: scale(1.1); }
+    .facilities .facility p {
+      color: #4b4b4b; }
+
+.page-banner {
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-size: cover; }
+  .page-banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.562); }
+  .page-banner .heading h2 {
+    color: #ffffff; }
+  .page-banner .wrapper {
+    position: relative;
+    z-index: 1; }
+
+.features-list {
+  padding: 100px 0;
+  background-color: #f5f5f5; }
+  @media only screen and (max-width: 767px) {
+    .features-list {
+      padding: 50px 0; } }
+  @media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .features-list {
+      padding: 50px 0; } }
+  .features-list .heading {
+    max-width: 680px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; }
+  .features-list .features-wrapper {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr); }
+    @media only screen and (max-width: 767px) {
+      .features-list .features-wrapper {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(1, 1fr); } }
+
+.members-quotes {
   padding: 100px 0; }
+  @media only screen and (max-width: 767px) {
+    .members-quotes {
+      padding: 50px 0; } }
+  @media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .members-quotes {
+      padding: 50px 0; } }
+  .members-quotes .wrapper {
+    display: flex;
+    flex-flow: column;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto; }
+  .members-quotes .quote {
+    display: flex;
+    gap: 4vw; }
+    .members-quotes .quote:not(:last-child) {
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #eaeaea; }
+    .members-quotes .quote:nth-child(odd) {
+      flex-flow: row-reverse; }
+    .members-quotes .quote .left {
+      width: 40%; }
+      .members-quotes .quote .left img {
+        max-width: 100%;
+        width: 100%;
+        height: auto; }
+      @media only screen and (max-width: 767px) {
+        .members-quotes .quote .left {
+          width: 100%; } }
+    .members-quotes .quote .right {
+      width: 60%;
+      position: relative; }
+      .members-quotes .quote .right .quote-icon {
+        margin-bottom: -40px; }
+      .members-quotes .quote .right .identity p {
+        font-size: 14px;
+        font-weight: 400; }
+      @media only screen and (max-width: 767px) {
+        .members-quotes .quote .right {
+          width: 100%; } }
+    .members-quotes .quote .separator {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0px;
+      gap: 5px; }
+      .members-quotes .quote .separator div:nth-child(1) {
+        width: 25px;
+        height: 5px;
+        background: #d90d32;
+        border-radius: 20px; }
+      .members-quotes .quote .separator div:nth-child(2) {
+        width: 10px;
+        height: 5px;
+        background: #d90d32;
+        border-radius: 20px; }
+    @media only screen and (max-width: 767px) {
+      .members-quotes .quote {
+        flex-flow: column !important; } }
+
+.donation-form {
+  padding: 100px 0;
+  background-color: #f5f5f5; }
+  @media only screen and (max-width: 767px) {
+    .donation-form {
+      padding: 50px 0; } }
+  @media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .donation-form {
+      padding: 50px 0; } }
+  .donation-form .wrapper {
+    display: flex;
+    gap: 6vw; }
+    @media only screen and (max-width: 767px) {
+      .donation-form .wrapper {
+        flex-flow: column; } }
+  .donation-form .left,
+  .donation-form .right {
+    width: 50%; }
+    @media only screen and (max-width: 767px) {
+      .donation-form .left,
+      .donation-form .right {
+        width: 100%; } }
+  .donation-form .donation-options {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    max-width: 250px; }
+    .donation-form .donation-options h3 {
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #cccccc; }
+    .donation-form .donation-options .content {
+      font-size: 14px; }
+
+.contact-form {
+  padding-top: 100px; }
+  @media only screen and (max-width: 767px) {
+    .contact-form {
+      padding: 50px 0; } }
+  @media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .contact-form {
+      padding: 50px 0; } }
+  .contact-form .wrapper {
+    display: flex;
+    gap: 5vw; }
+    @media only screen and (max-width: 767px) {
+      .contact-form .wrapper {
+        flex-flow: column; } }
+    .contact-form .wrapper .left {
+      width: 50%; }
+      @media only screen and (max-width: 767px) {
+        .contact-form .wrapper .left {
+          width: 100%; } }
+    .contact-form .wrapper .right {
+      width: 50%; }
+      @media only screen and (max-width: 767px) {
+        .contact-form .wrapper .right {
+          width: 100%; } }
+  .contact-form .map-wrapper iframe {
+    width: 100%;
+    display: flex; }
+  .contact-form .contacts {
+    margin-top: 40px;
+    display: flex;
+    flex-flow: column;
+    gap: 10px; }
+    .contact-form .contacts a {
+      color: #4b4b4b;
+      display: flex;
+      align-items: center;
+      gap: 5px; }
+      .contact-form .contacts a i {
+        color: #d90d32;
+        width: 16px;
+        height: 16px;
+        min-width: 16px;
+        min-height: 16px; }
 
 /* width */
 ::-webkit-scrollbar {
@@ -9275,6 +9590,15 @@ body {
 section {
   overflow-x: clip;
   position: relative; }
+
+.entry-content {
+  padding-top: 77px; }
+  @media only screen and (max-width: 767px) {
+    .entry-content {
+      padding-top: 56px; } }
+  @media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .entry-content {
+      padding-top: 56px; } }
 
 /*!*****************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./assets/scss/admin.scss ***!

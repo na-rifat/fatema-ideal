@@ -1,5 +1,9 @@
 .hero-banner {
-    height: 100vh;
+    height: calc(100vh - 77px);
+
+    @include mobile-tablet {
+        height: calc(100vh - 56px);
+    }
 
     .swiper {
         height: 100%;
@@ -15,6 +19,10 @@
             animation-name: play_bg_img;
             animation-duration: 10s;
             animation-iteration-count: infinite;
+
+            @include mobile {
+                animation-name: play_bg_img_mobile;
+            }
         }
 
         .wrapper {
@@ -23,7 +31,11 @@
             z-index: 1;
 
             @include tablet {
-                width: 100%;
+                max-width: 70%;
+            }
+
+            @include mobile {
+                max-width: 90%;
             }
         }
     }
@@ -38,6 +50,19 @@
         }
         100% {
             background-size: 100%;
+        }
+    }
+
+    @keyframes play_bg_img_mobile {
+        0% {
+            background-size: auto 100%;
+        }
+
+        60% {
+            background-size: auto 110%;
+        }
+        100% {
+            background-size: auto 100%;
         }
     }
     .overlay {

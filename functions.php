@@ -328,3 +328,12 @@ function generateYouTubeEmbed( $url, $width = 560, $height = 315 )
     }
 
 }
+
+function allow_webp_upload( $mime_types )
+{
+    $mime_types[ 'webp' ] = 'image/webp';
+
+    return $mime_types;
+}
+
+add_filter( 'upload_mimes', 'allow_webp_upload' );

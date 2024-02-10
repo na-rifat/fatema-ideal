@@ -1,0 +1,27 @@
+.page-banner {
+    min-height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.562);
+    }
+
+    .heading {
+        h2 {
+            color: $color-white;
+        }
+    }
+
+    .wrapper {
+        position: relative;
+        z-index: 1;
+    }
+}

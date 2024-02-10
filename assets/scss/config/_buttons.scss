@@ -12,11 +12,11 @@
 
     &.primary {
         background: $color-red;
-        color: $color-text-lightgrey;
+        color: $color-white;
         border-color: $color-red;
 
         &:hover {
-            background-color: $color-text-lightgrey;
+            background-color: $color-white;
             color: $color-red;
         }
     }

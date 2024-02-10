@@ -1,4 +1,4 @@
-import { Swiper, Pagination } from 'swiper';
+import { Swiper, Pagination, Autoplay } from 'swiper';
 import 'swiper/scss';
 
 
@@ -10,9 +10,9 @@ const hero = {
             '.hero-banner .swiper',
             {
                 slidesPerView: 1,
-                modules: [Pagination],
+                modules: [Pagination, Autoplay],
                 loop: true,
-                speed: 1500,
+                speed: 1200,
                 autoplay: {
                     delay: 3000,
                     pauseOnMouseEnter: true

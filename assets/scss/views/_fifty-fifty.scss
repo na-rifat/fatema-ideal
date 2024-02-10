@@ -1,12 +1,23 @@
 .fifty-fifty {
     padding: 100px 0;
 
+    @include mobile-tablet {
+        padding: 50px 0;
+    }
+
     .wrapper {
         display: flex;
         gap: 5vw;
 
+        @include mobile {
+            flex-flow: column;
+        }
+
         &.reverse {
             flex-flow: row-reverse;
+            @include mobile {
+                flex-flow: column-reverse;
+            }
         }
 
         .left {
@@ -21,13 +32,20 @@
                     object-position: center;
                 }
             }
+
+            @include mobile {
+                width: 100%;
+            }
         }
 
         .right {
             width: 50%;
 
-            .subtitle{
+            .subtitle {
                 font-weight: 600;
+            }
+            @include mobile {
+                width: 100%;
             }
         }
     }
